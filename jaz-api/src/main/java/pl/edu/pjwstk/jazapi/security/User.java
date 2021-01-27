@@ -10,7 +10,8 @@ public class User implements UserDetails {
     private String password;
     private Collection<GrantedAuthority> authorities;
 
-    public User() {}
+    public User() {
+    }
 
     public User(String username, String password, Collection<GrantedAuthority> authorities) {
         this.username = username;

@@ -1,13 +1,13 @@
 package pl.edu.pjwstk.jazapi.model;
 
-import pl.edu.pjwstk.jazapi.service.DbEntity;
+import pl.edu.pjwstk.jazapi.service.Identifiable;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "cars")
-public class Car implements DbEntity {
+public class Car implements Identifiable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
