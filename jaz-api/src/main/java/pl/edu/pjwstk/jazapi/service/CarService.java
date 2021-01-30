@@ -6,9 +6,7 @@ import pl.edu.pjwstk.jazapi.model.Car;
 import pl.edu.pjwstk.jazapi.repository.AddOnRepository;
 import pl.edu.pjwstk.jazapi.repository.CarRepository;
 
-import java.util.Collections;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 import static pl.edu.pjwstk.jazapi.util.Utils.fallbackIfNull;
 
@@ -59,5 +57,14 @@ public class CarService extends CrudService<Car> {
 
             return updateEntity;
         }
+    }
+
+    public List<Car> getByManufacturer(String manufacturer) {
+        Iterable<Car> cars = ((CarRepository) repository).getByManufacturer(manufacturer);
+        var carList = new ArrayList<Car>();
+
+        cars.forEach(carList::add);
+
+        return carList;
     }
 }
