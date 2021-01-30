@@ -1,10 +1,12 @@
 package pl.edu.pjwstk.jazapi.dto;
 
+import org.springframework.hateoas.server.core.Relation;
 import pl.edu.pjwstk.jazapi.model.AddOn;
 import pl.edu.pjwstk.jazapi.service.Identifiable;
 
 import java.math.BigDecimal;
 
+@Relation(itemRelation = "addon", collectionRelation = "addons")
 public class AddOnDTO implements Identifiable {
     private final Long id;
     private final String name;
